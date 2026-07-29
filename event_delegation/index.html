@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+
+   <input type="text" id="inputField" placeholder="Type something...">
+   <button id="submitButton">Submit</button>
+
+   <ul id="resultList">
+   </ul>
+
+
+   <script>
+
+   let a = document.querySelector("#submitButton");
+   let b = document.querySelector("#resultList");
+   let c = document.querySelector("#inputField");
+
+
+   a.addEventListener("click", function(){
+
+       let li = document.createElement("li");
+       li.innerText = c.value;
+
+       let delBtn = document.createElement("button");
+       delBtn.innerText = "delete";
+
+       delBtn.classList.add("delete");  // gives class name
+
+       li.appendChild(delBtn);
+       b.appendChild(li);
+
+       c.value = "";
+
+   });
+
+
+   // Event Delegation
+   b.addEventListener("click", function(event){
+
+       if(event.target.nodeName == "BUTTON"){
+
+           let list = event.target.parentElement;
+           list.remove();
+
+       }
+
+   });
+
+
+   </script>
+
+</body>
+</html>
