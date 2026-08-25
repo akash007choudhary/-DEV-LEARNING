@@ -1,0 +1,143 @@
+we need only package.json as wo keep al data about teh package , and thus if module get dleetd this ahs every details of that thus 
+
+// type npm install and it will automatically instakl the neede dependecies
+
+
+we never give or push or downliad noad modules as we only downlaoid teh package.json and then we will install our own packages by doung above 
+
+//We do not push/download node_modules. We push/download package.json and then run npm install.
+
+
+
+**notes of hwo to use imporet tehn explore
+
+1.Node.js Modules — require, module.exports, import, export
+1. CommonJS
+
+Node.js traditionally uses CommonJS for modules.
+
+Export:
+
+// math.js
+function add(a, b) {
+    return a + b;
+}
+
+
+module.exports = add;
+
+Import:
+
+// app.js
+const add = require("./math");
+
+
+console.log(add(10, 20));
+2. Exporting multiple things
+// math.js
+function add(a, b) {
+    return a + b;
+}
+
+
+function subtract(a, b) {
+    return a - b;
+}
+
+
+module.exports = { add, subtract };
+
+Import:
+
+// app.js
+const { add, subtract } = require("./math");
+
+
+console.log(add(10, 5));
+console.log(subtract(10, 5));
+3. Importing a directory
+
+If the structure is:
+
+project/
+├── app.js
+└── math/
+    ├── index.js
+    └── operations.js
+
+Then:
+
+const math = require("./math");
+
+Node automatically looks for:
+
+math/index.js
+
+So index.js acts as the entry point of the directory.
+
+4. ES Modules
+
+Modern JavaScript also supports:
+
+import math from "./math.js";
+
+and:
+
+export default math;
+
+For named exports:
+
+export { add, subtract };
+
+Import:
+
+import { add, subtract } from "./math.js";
+5. package.json and "type": "module"
+
+To use import and export in Node.js, you can put this in package.json:
+
+{
+    "type": "module"
+}
+
+Then Node treats .js files as ES Modules.
+
+Example:
+
+project/
+├── package.json
+├── app.js
+└── math.js
+
+package.json:
+
+{
+    "type": "module"
+}
+
+math.js:
+
+export function add(a, b) {
+    return a + b;
+}
+
+app.js:
+
+import { add } from "./math.js";
+
+
+console.log(add(10, 20));
+🧠 Quick Revision
+COMMONJS
+require()        → import
+module.exports   → export
+
+
+ES MODULES
+import           → import
+export           → export
+
+
+package.json
+"type": "module"
+→ enables ES Module syntax for .js files

@@ -1,0 +1,6 @@
+NPM — Short Notes
+NPM = Node Package Manager
+It is the default package manager for Node.js.
+Used to install, update, remove, and manage packages/libraries.
+Packages are downloaded from the npm registry.
+NPM is installed automatically when you install Node.js.
