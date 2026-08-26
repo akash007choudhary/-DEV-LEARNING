@@ -1,0 +1,17 @@
+
+<%- include("includes/head.ejs") %>  
+<!-- //ye ek subtemplate hai jo head.ejs ko include kar raha hai -->
+
+<body>
+    hello welcome to instagram page for your id 
+
+    <h1>Welcome to the roll page it belonmgs to <%= dta.name
+        %> </h1>\
+
+
+        <hr>
+        <% for (let post of dta.posts) {%>
+            <img src="<%= post.image %>" alt="">
+        <p>like: <%= post.likes %>
+        &nbsp; &nbsp; commenst :<%= post.comments %></p>
+            <% } %>
