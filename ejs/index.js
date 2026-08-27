@@ -17,6 +17,9 @@ app.use(express.static(path.join(__dirname,"/public/css")));
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"/views")); //ye line ka matlb ahhi view kahan hai uska exact path de rhe hai taki server jaahan se bhi run ho wo corrctly render hoi jaye 
 
+
+
+//  TEHSE ALL ARE GET REQUESTS  means we will ask the browser to give some data and resposnse accridng to our nmeed 
 app.get("/",(req,res)=>{
     res.render("home.ejs");  
 });
