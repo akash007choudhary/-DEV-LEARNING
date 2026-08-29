@@ -1,0 +1,23 @@
+1. views → HTML pages/templates
+
+The views folder contains your EJS files.
+
+1. views = pages that your server renders and sends to the browser.
+2. public → files the browser can directly use
+
+The public folder is usually for static files.
+
+
+*represenattion for this 
+
+                    Express
+                       │
+          ┌────────────┴────────────┐
+          ↓                         ↓
+       views/                    public/
+          │                         │
+       .ejs files            CSS / JS / images
+          │                         │
+          └────────────┬────────────┘
+                       ↓
+                    Browser

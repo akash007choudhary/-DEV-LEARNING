@@ -1,0 +1,79 @@
+CRUD ; 
+C – Create (add new data)
+R – Read (retrieve or view data)
+U – Update (modify existing data)
+D – Delete (remove data)
+
+crud operations ;
+
+get retrvies resources ;
+post submits new data to the server 
+put updates existing data 
+patch updates existing data partially 
+Delete removes data 
+
+
+
+8. So the whole thing becomes VERY simple
+
+
+
+HTTP Method	    URL         	Meaning	    CRUD
+GET	          /posts	    Get all posts	READ
+POST	      /posts	    Create a post	CREATE
+GET	         /posts/:id	     Get one post	READ
+PATCH	     /posts/:id	    Update a post	UPDATE
+DELETE	     /posts/:id	    Delete a post	DELETE
+
+
+post is the route main
+
+2. What is an API endpoint?
+An API endpoint is a specific URL/path through which you can interact with your backend.Each endpoint provides a particular way to access some functionality/data.
+So the API is basically the communication interface between your frontend and backend.
+
+1. http://localhost:3000 = server
+
+http://localhost:3000/posts
+│                     │
+│                     └── PATH
+│
+└── SERVER ADDRESS
+
+and when we create paths we also create api endpoints on those paths to perform fxns 
+
+When we document the API, we usually write:
+GET /posts  ->> this is an api endpoint 
+│   │
+│   └── where/resource
+│
+└── what operation
+
+
+
+
+
+
+
+// FOR HOPSCOTH TO WORK W DID THIS
+
+
+npm install cors   WE INSTALLED THE CORS
+
+THESE TO BE INCLUDED :
+const cors = require("cors");  AT TOP 
+
+app.use(cors());
+
+
+
+NEEDED BEACUSE 
+Hoppscotch
+https://hoppscotch.io
+        ↓
+Express
+http://localhost:3000
+
+
+REASON
+**CORS (Cross-Origin Resource Sharing)** is a security mechanism that controls whether a web application from one origin can send requests to a server on another origin. In our case, **Hoppscotch (`https://hoppscotch.io`)** was trying to access our Express API at **`http://localhost:3000`**, which are different origins, so the browser blocked the request. We solved this by installing the `cors` package and adding `app.use(cors())` to Express. You need CORS when your **frontend/client and backend are running on different origins**, such as React on `localhost:5173` and Express on `localhost:3000`.

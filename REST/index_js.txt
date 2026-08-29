@@ -1,0 +1,111 @@
+# EXPRESS + EJS + REST — QUICK REVISION NOTES
+
+## 1. Express Basics
+
+* `express()` → creates the Express application.
+* `app.listen(port)` → starts the server on the given port.
+* `app.get()`, `app.post()`, `app.patch()`, `app.delete()` → define routes for different HTTP methods.
+
+## 2. EJS
+
+* `app.set("view engine", "ejs")` → tells Express to use EJS.
+* `res.render("page.ejs", { data })` → renders an EJS page and sends data to it.
+* `<%= variable %>` → displays a value in EJS.
+* `<% code %>` → runs JavaScript logic in EJS.
+
+## 3. Static Files
+
+* `express.static("public")` → serves CSS, JS, images, etc. from the `public` folder.
+
+## 4. Request Data
+
+* `express.urlencoded()` → parses HTML form data into `req.body`.
+* `express.json()` → parses JSON request data into `req.body`.
+
+### Remember:
+
+* `req.params` → data from URL (`/posts/:id`).
+* `req.query` → data after `?` (`/posts?name=akash`).
+* `req.body` → data sent inside the request/form.
+
+## 5. Method Override
+
+* HTML forms support only **GET and POST**.
+* `method-override` allows forms to perform **PATCH, PUT and DELETE**.
+* `?_method=PATCH` → tells Express to treat the request as PATCH.
+
+## 6. CORS
+
+* CORS → allows requests between different origins/domains, e.g. frontend `5173` → backend `3000`.
+
+## 7. UUID
+
+* `uuidv4()` → generates a unique ID for each post/user/resource.
+
+## 8. REST HTTP Methods
+
+| Method | Purpose                    |
+| ------ | -------------------------- |
+| GET    | Read data                  |
+| POST   | Create data                |
+| PATCH  | Partially update data      |
+| PUT    | Replace/update entire data |
+| DELETE | Delete data                |
+
+## 9. REST Routes
+
+* `GET /posts` → show all posts.
+* `GET /posts/new` → show create form.
+* `POST /posts` → create a post.
+* `GET /posts/:id` → show one post.
+* `GET /posts/:id/edit` → show edit form.
+* `PATCH /posts/:id` → update a post.
+* `DELETE /posts/:id` → delete a post.
+
+## 10. `:id` — Dynamic Parameter
+
+* `:id` → placeholder for a specific resource ID.
+* `/posts/123` → `req.params.id` gives `"123"`.
+* `find()` → finds the post matching that ID.
+
+## 11. Important Response Methods
+
+* `res.send()` → sends a direct response.
+* `res.render()` → renders an EJS page.
+* `res.redirect()` → redirects to another route.
+* `res.status(404)` → sets the HTTP status code.
+
+## 12. CRUD
+
+* **C** → Create → POST
+* **R** → Read → GET
+* **U** → Update → PATCH / PUT
+* **D** → Delete → DELETE
+
+## 13. Important Array Methods
+
+* `find()` → returns the first matching element.
+* `filter()` → creates a new array containing elements that pass a condition.
+* `push()` → adds an element to an array.
+
+## 14. One Important Concept
+
+`req.params` → **URL**
+
+`req.query` → **? query**
+
+`req.body` → **form/JSON data**
+
+`res.render()` → **send EJS page**
+
+`res.redirect()` → **go to another route**
+
+`res.send()` → **send response**
+
+### REST FLOW
+
+Browser → Request → Express Route → Process Data → Response
+
+### Example Update Flow
+
+# Edit Form → POST → method-override → PATCH → update post → redirect
