@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+
+<body>
+
+    <table border="1">
+
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        
+
+        <% for (let user of result) { %>
+
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.username %></td>
+                <td><%= user.email %></td>
+                <td><a href="/users/<%= user.id %>/edit">View</a></td>
+                
+            </tr>
+            
+
+        <% } %>
+
+    </table>
+
+</body>
+
+</html>
+
