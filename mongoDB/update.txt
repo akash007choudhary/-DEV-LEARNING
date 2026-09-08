@@ -1,0 +1,56 @@
+// Find
+db.student.find({ age: { $gt: 20 } })
+
+// One document
+db.student.findOne({ name: "akash" })
+
+// Insert
+db.student.insertOne({ name: "akash", age: 19 })
+
+// Update
+db.student.updateOne(
+    { name: "akash" },
+    { $set: { age: 20 } }
+)
+
+// Delete
+db.student.deleteOne({ name: "akash" })
+
+
+nesting in bson
+{
+    name: "akash",
+    age: 19,
+    address: {
+        city: "Bhubaneswar",
+        state: "Odisha",
+        pincode: 768001
+    }
+}
+
+hwo ot access
+db.student.find({
+    "address.city": "Bhubaneswar"
+})
+
+
+
+
+delete in mongoDB
+MongoDB                         SQL
+------------------------------------------------
+deleteOne()                     DELETE one row
+deleteMany()                    DELETE multiple rows
+drop()                          DROP TABLE
+dropDatabase()                  DROP DATABASE
+
+db.student.deleteOne({ name: "akash" })
+db.student.deleteMany({ age: 19 })
+
+
+db.student.deleteMany({}) it dleet every thnsg inside studnet
+
+
+db.student.drop()    dleet studnet tabel or collecion :
+
+db.dropDatabase()
