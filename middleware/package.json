@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "git_web_learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akash007choudhary/-DEV-LEARNING.git"
+  },
+  "keywords": [],
+  "author": "akash choudhary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akash007choudhary/-DEV-LEARNING/issues"
+  },
+  "homepage": "https://github.com/akash007choudhary/-DEV-LEARNING#readme"
+}
