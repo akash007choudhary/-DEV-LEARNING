@@ -1,0 +1,36 @@
+1. One-to-Few
+
+If one document has only a small number of related data and you usually use that data together, embed it inside the same document.
+
+Example: One user has a few phone numbers.
+
+
+
+const userSchema = new mongoose.Schema({
+    name: String,
+    phoneNumbers: [
+        {
+            number: String,
+            type: String
+        }
+    ]
+});
+
+const user = mongoose.model("user",userSchema);
+const add=async()=>{
+    let u1=mew user({
+        name:"akahs",
+        phoneNumbers:[
+            {
+                number:89323,
+                type:integer,
+                _ID:FALSE-->>>>AISE KR DNEGE TO ID NHI DEGA MONGO
+            },
+        ],
+    })
+}
+
+u1.phoneNumbers.push({new valeu bhi push krdo yhan })
+
+
+MONGO YE ANDER KE phoneNumbers KE LIYE BHI ID UNIQUE WALE CREATE KRT HAI 

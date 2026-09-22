@@ -1,0 +1,23 @@
+ONE TO SQUILIONS : EX INSTAGRAM
+
+YAHAN CHID MAIN PARNET KA referencesSTROE KRTA HAI 
+
+
+BUT ONE TO MANY NRMLA MANIN PARNET MAIN CHILD KA referencesSTORE KRTE 
+
+
+User
+  _id: 101
+     ↓
+Order 1 → user: 101
+Order 2 → user: 101
+Order 3 → user: 101
+...
+Order 1,000,000 → user: 101
+
+as if like previous case if we would put each order id in the user then nothing could be happening it would become too large
+
+
+
+NOTES:
+https://www.mongodb.com/company/blog/mongodb/6-rules-of-thumb-for-mongodb-schema-design

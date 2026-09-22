@@ -1,0 +1,72 @@
+2. One-to-Many
+
+If one document can have many related documents, create a separate model and store references.
+
+Example: One user can have many posts.
+
+const userSchema = new mongoose.Schema({
+    name: String
+});
+
+const postSchema = new mongoose.Schema({
+    title: String,
+    content: String,
+    author: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User"
+    }
+});
+
+
+// One Customer -> Many Orders
+const addCustomer = async () => {
+
+    // Find orders using item name
+    let order1 = await Order.findOne({ item: "Chips" });
+    let order2 = await Order.findOne({ item: "Chocolate" });
+
+    // Create customer
+    let cust1 = new Customer({
+        name: "Rahul Kumar"
+    });
+
+    // Push the found orders
+    cust1.orders.push(order1);
+    cust1.orders.push(order2);
+
+    // Save customer
+    await cust1.save();
+
+    console.log(cust1);
+};
+
+addCustomer();
+
+
+NOTE:
+
+Even if we push the whole Order document, MongoDB will store only its _id in the orders array when the field is defined as ObjectId with ref.
+
+
+
+POPULATE:
+
+let customer = await Customer.findOne({ name: "Rahul" })
+    .populate("orders");
+
+Now Mongoose finds those IDs in the Order collection and gives you:
+    {
+    name: "Rahul",
+    orders: [
+        {
+            _id: "123",
+            item: "Chips",
+            price: 10
+        },
+        {
+            _id: "456",
+            item: "Chocolate",
+            price: 20
+        }
+    ]
+}
