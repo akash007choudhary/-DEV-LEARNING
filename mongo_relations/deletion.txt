@@ -1,0 +1,10 @@
+like one to many ek user ka acct delte to post dleete
+
+
+like dlt krna hai to , jite bhi related tables hnge sabse dlete krna padea so dleete ka propagation  
+
+
+---->>>done by middle wres in mongooose
+
+
+
