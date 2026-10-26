@@ -68,3 +68,7 @@ Makes precomputed attacks, such as rainbow table attacks, harder.
 Improves password security.
 
 
+
+// Passport uses sessions to remember an authenticated user across multiple requests, so the user doesn't need to log in again on every page.
+
+
